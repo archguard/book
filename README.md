@@ -18,8 +18,12 @@
 
 ArchGuard 相关
 
-- [ ] ArchGuard 插件化
-  - [ ] 插件化
+- [ ] ArchGuard Pipeline 分析器
+  - [ ] Pipeline 设计
+- [ ] ArchGuard 插件
+  - [ ] 插件化机制 
+  - [ ] 插件化分析器
+  - [ ] 插件化 Linter
 
 # 架构建模：如何用代码描述软件架构
 
