@@ -6,7 +6,6 @@
 
 - [治理基石](basic/architecture-basic.md)
 - [架构建模](basic/architecture-modeling.md)
-- [模式语言](basic/pattern-language.md)
 
 # 模式
 
@@ -14,6 +13,7 @@
 - [可视化]()
     - [关注点驱动](patterns/focus-driven.md)
     - [城市隐喻](patterns/city-metaphor.md)
+    - [图：Network](patterns/graph-network.md)
     - [交互式分析](patterns/interactive-analysis.md)
 - [分析](patterns/analysis-overview.md)
     - [生命周期：三态模型](patterns/analysis-lifecycle.md)

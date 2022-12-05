@@ -215,5 +215,3 @@ data class PotentialExecArch(
 软件只要一直在开发，就会以细微地方式变化着。从宏观的层面来说，尽可能架构师都在努力地不去大范围地变动结构。而我们需要面对于这些挑战，诸如于基础设施变化，而这种变化带来的是临时性的中间状态。
 
 如何去表示这种临时性的中间状态，就变得更加有意思。
-
-在这里只开始了迈出了第一步，如果大家有兴趣，欢迎来 ArchGuard 为技术建模：[https://github.com/archguard/archguard/discussions/67](https://github.com/archguard/archguard/discussions/67)
