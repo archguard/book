@@ -36,4 +36,3 @@
 
 《[模式的模式：从设计模式到元模式](https://www.phodal.com/blog/patterns-of-patterns-meta-pattern/)》
 
-
