@@ -113,7 +113,6 @@
 
 与通常的 C/S 结构开发无异。图形化的结果，用于支持我们的**说明性编程与显性设计**。
 
-
 # 构建 ArchGuard 架构工作台
 
 ## 原型参考与设计：可交互环境与文档体验
@@ -350,6 +349,4 @@ embeddedClasspath = File(tempdir).walk(FileWalkDirection.BOTTOM_UP).sortedBy { i
 ikotlin - Classpath used in script: [/tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-script-runtime-1.6.21.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-kernel-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/dsl-2.0.0-alpha.12.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-compiler-embeddable-1.6.21.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-api-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-lib-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-shared-compiler-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-common-dependencies-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-script-util-1.6.21.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f]
 ```
 
-如此一来，它总算能正确启动了，然后再打一个新的 tag：`v2.0.0-alpha.12` 。
-
-
+如此一来，它总算能正确启动了。
