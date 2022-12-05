@@ -10,16 +10,16 @@
 
 # 模式
 
+- [模式的模式](patterns/README.md)
 - [分析]()
-    - [生命周期：三态模型](./pattern/analysis-lifecycle.md)
+    - [生命周期：三态模型](patterns/analysis-lifecycle.md)
     - [语言元模型](./patterns/language-metamodel.md)
     - [动静态跟踪](./patterns/analysis-dynamic-tracing.md))
 - [模型]()
     - [适应度函数](./patterns/fitness-function.md)
     - [架构孪生](./patterns/architecture-twin.md)
-- [语言抽象]()
+- [架构即代码](./patterns/architecture-as-code.md)
     - [架构设计语言](./patterns/architecture-language.md)
-    - [架构即代码](./patterns/architecture-as-code.md)
     - [架构工作台](./patterns/architecture-workbench.md)
 - [可视化]()
     - [关注点驱动](./patterns/focus-driven.md)
