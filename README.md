@@ -1,5 +1,7 @@
 # ArchGuard Book
 
+在线阅读：[https://archguard.github.io/book/](https://archguard.github.io/book/)
+
 架构治理指南与实践
 
 - [ ] 什么是架构
