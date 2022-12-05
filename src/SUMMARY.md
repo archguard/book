@@ -28,16 +28,23 @@
 - [治理]()
     - [规则限制](./patterns/linter.md)
     - [分层的层次控制](./patterns/layered-control.md)
+    - [访问控制](./patterns/access-control.md)
+        - [有限核心域](./patterns/limited-core-domain.md) ?
+- [流程]()
     - [轻量级文档](./patterns/lightweight-documentation.md)
+    - [架构设计流程](./patterns/architecture-design-process.md)
 
 # 坏模式
 
 - [流程]()
     - [模式逃逸](./bad-patterns/pattern-escape.md)
 
-# 工具化
+# 工具
 
-- [ArchGuard Tools](./archguard/basic.md)
+- [工具化模式]()
+    - [自服务数据分析](./tools/self-service-data-analysis.md))
+    - [插件化架构](./tools/plugin-system.md)
+- [ArchGuard](./tools/basic.md)
 
 # 参考资料
 
