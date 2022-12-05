@@ -1,0 +1,12 @@
+[book]
+authors = ["Phodal Huang"]
+language = "zh-cn"
+multilingual = false
+src = "src"
+title = "架构治理模式与实践"
+
+[output.html]
+git-repository-url = "https://github.com/archguard/book"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/archguard/book/edit/master/{path}"
+site-url = "/"
