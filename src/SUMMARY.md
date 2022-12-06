@@ -16,7 +16,7 @@
     - [架构孪生](patterns/architecture-twin.md)
 - [分析](patterns/analysis-overview.md)
     - [关注点驱动](patterns/focus-driven.md)
-    - [生命周期：三态模型](patterns/analysis-lifecycle.md)
+    - [多态模型分析](patterns/analysis-lifecycle.md)
     - [语言元模型](patterns/language-metamodel.md)
     - [动静态追踪](patterns/dynamic-tracing.md))
 - [可视化]()
