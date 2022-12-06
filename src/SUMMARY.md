@@ -10,8 +10,9 @@
 # 模式
 
 - [模式的模式](patterns/README.md)
-- [模型驱动]()
-    - [适应度函数](patterns/fitness-function.md)
+- [集合]()
+    - [架构特征仓库](patterns/characteristics-repository.md)
+    - [架构适应度函数](patterns/fitness-function.md)
     - [架构孪生](patterns/architecture-twin.md)
 - [分析](patterns/analysis-overview.md)
     - [生命周期：三态模型](patterns/analysis-lifecycle.md)
