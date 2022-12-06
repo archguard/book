@@ -6,9 +6,17 @@
 
 ## 问题
 
+
 ## 解决方案
 
-![Dependency Graph](../images/dependency_graph.svg)
 
+### 示例
 
+ArchGuard 依赖分析示例
+
+![ArchGuard 依赖分析示例](../images/archguard-dep-network.png)
+
+[Coca](https://github.com/modernizing/coca) 依赖分析示例
+
+![Gradle DSL 分析示例](../images/android-gradle-dsl.svg)
 
