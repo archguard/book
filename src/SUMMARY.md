@@ -10,7 +10,7 @@
 # 模式
 
 - [模式的模式](patterns/README.md)
-- [集合]()
+- [特征集合]()
     - [架构特征仓库](patterns/characteristics-repository.md)
     - [架构适应度函数](patterns/fitness-function.md)
     - [架构孪生](patterns/architecture-twin.md)
@@ -21,11 +21,12 @@
     - [动静态追踪](patterns/dynamic-tracing.md))
 - [可视化]()
     - [城市隐喻](patterns/city-metaphor.md)
-    - [图：Network](patterns/graph-network.md)
+    - [图网络](patterns/graph-network.md)
+        - [依赖图](patterns/graph-dependency.md) 
     - [交互式分析](patterns/interactive-analysis.md)
 - [治理]()
     - [规则限定](patterns/linter-limit-rule.md)
-    - [门禁：CI/CD Gate](patterns/gate-guard.md)
+    - [门禁](patterns/gate-guard.md)
     - [表征化建模过程](patterns/fact-based-modeling.md)
     - [轻量级文档](patterns/lightweight-documentation.md)
 - [语言抽象]()
