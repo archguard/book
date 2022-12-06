@@ -1,4 +1,47 @@
-# 架构设计语言
+# 架构语言
+
+> 架构描述语言（ADL）是一种计算机语言，用来描述软件或系统架构。这意味着如果是技术性架构，该架构必须被清楚地传达给软件开发者。功能架构下，
+> 该软件架构必须被清楚地传达给利益相关者和企业工程师。一些软件工程团体开发了若干 ADL，如 ACME（CMU开发），AADL（SAE标准化），C2（UCI开发），
+> Darwin（英国伦敦帝国学院开发）和 Wright（CMU开发） 。
+
+维基百科：[架构描述语言](https://zh.wikipedia.org/wiki/%E6%9E%B6%E6%9E%84%E6%8F%8F%E8%BF%B0%E8%AF%AD%E8%A8%80)
+
+ADL原则上的不同之处：
+
+- 需求语言，因为 ADL 植根于解决方案，而需要说明问题。
+- 编程语言，因为 ADL 不能绑定架构抽象到具体解决方案
+- 建模语言，因为 ADL 往往侧重于表现构件而不是整体行为。然而，有重点表现构件的特定域建模语言（DSML）。
+
+## 问题
+
+## 示例：Wright
+
+首页：[http://www.cs.cmu.edu/afs/cs/project/able/www/wright/index.html](http://www.cs.cmu.edu/afs/cs/project/able/www/wright/index.html)
+
+Wright 通过为体系结构描述提供正式基础来解决这个问题。作为一种体系结构描述语言，Wright 可用于为体系结构规范提供精确、抽象的含义，并分析单个软件系统和系统系列的体系结构。
+Wright 还充当了探索架构抽象本身本质的工具。特别是，关于 Wright 的工作集中在显式连接器类型的概念、架构属性自动检查的使用以及架构风格的形式化上。
+
+Wright 示例：
+
+```
+Style SharedData
+Connector Bogus
+    Role User1 = set -> User1 |~| get -> User1 |~| Tick
+    Role User2 = set -> User2 |~| get -> User2 |~| Tick
+    
+    Glue = User1.set -> Continue [] User2.set -> Continue [] Tick
+    where {
+        Continue = User1.set -> Continue
+            [] User2.set -> Continue
+            [] User1.get -> Continue
+            [] User2.get -> Continue
+            [] Tick
+    }
+
+End Style
+```
+
+## 架构语言：Fklang
 
 如《[领域特定语言设计技巧](https://www.phodal.com/blog/step-by-step-domain-specific-language-design/)》一文中所描述的过程，在这个上下文之下就是：
 
@@ -26,7 +69,7 @@ TL；DR 版本：立即开始你的吐槽之旅途：<https://book.feakin.com/qu
 
 在 ArchGuard 中，我们关注于对开发态的治理，而其中的手段之一是：**规范工具化**。规范本身是应该内建的，诸如于我们应该制定好分层架构，诸如于 DDD 分层模式。并将这个分层架构与代码实现相绑定，再结合到开发工具中。诸如于 Fklang 的 `layer` 分层语法便是基于这个理念设计的：
 
-```javascript
+```feakin
 layered DDD {
   dependency {
     interface -> application
@@ -51,7 +94,7 @@ layered DDD {
 
 Fklang 便是承载了规范化输出部分，将图形设计代码化，将与实现代码相结合（如代码生成等）。在设计 Fklang 的 DDD 部分语法，我们参考了 [ContextMapper](https://contextmapper.org/docs/context-map/) 部分（主要也是设计不出差异），示例如下所示：
 
-```javascript
+```feakin
 ContextMap TicketBooking {
     Reservation -> Cinema;
     Reservation -> Movie;
@@ -81,7 +124,7 @@ PS：因为 Fklang 还没有实现完整的类型系统，所以在现在的实�
 
 然后呢，然后呢，我们需要一个渐进式的 Darklang（<https://darklang.com/>），它与框架、Web、数据库无关。我们在写代码的时候，往往只会配置过一次数据库，剩下的数据库操作可能是在**删表与重建**。也因此，在描述数据库时，我们要配置的应该是 env，配置怎样的数据库，怎么的 http server 等等。Fklang 示例如下：
 
-```javascript
+```feakin
 env Local {
   datasource {
     driver: postgresql
@@ -134,7 +177,7 @@ env Local {
 
 在设计  Fklang 的过程中，我们构建了一个 flow 语法，它是用来生成注释给 AI 看的：
 
-```javascript
+```feakin
 impl UserCreated {
   endpoint {
     POST "/user/{id}";
@@ -150,13 +193,13 @@ impl UserCreated {
 
 其设计思想来源于，我们日常沟通中的，你这个 API 需要先查询哪个表，再 xxx，最后再 xxx。虽然，设计得还比较粗糙，重点还在于输入和输出，在配置了分层之后，会在对应的 Controller （UserController）中插入对应的代码：
 
-```javascript
-        @PostMapping("/user/{id}")
-        public User createUser() {
-            // 1. get user:User from UserRepository.getUserById with ()
-            // 2. get user:User from UserRepository.save with (user:User)
-            // 3. send User from Kafak to "user.create"
-        }
+```java
+@PostMapping("/user/{id}")
+public User createUser() {
+    // 1. get user:User from UserRepository.getUserById with ()
+    // 2. get user:User from UserRepository.save with (user:User)
+    // 3. send User from Kafak to "user.create"
+}
 ```
 
 在引入 GitHub Copilot 之后，便可以自动生成靠谱，还有不靠谱的代码。
@@ -196,7 +239,7 @@ PS：详细介绍见：<https://book.feakin.com/design-principles> （还没写�
 
 **基于 DDD 产物的 Mock Server**。既然 Fklang 能作为 DDD 设计结果的承载物，那么考虑到  API 设计也是其中的一部分，自然而然地 Mock Server  也是可以跑起来的 —— 读取 Aggregate、Entity 等生成  API。所以，一个 Mock Server 日志示例：
 
-```javascript
+```bash
 fkl run --main /Volumes/source/feakin/fklang/docs/samples/impl.fkl --func mock-server
 Running at http://localhost:9090 !
 Routes: 
@@ -211,7 +254,7 @@ http://localhost:9090/api/movie/movie
 
 **基于 API 的契约测试。**相似的，我们也将 API 契约作为测试的一部分，可用于测试 API 的实现是否是正确的，如下所示：
 
-```javascript
+```feakin
 impl UserUpdated {
   endpoint {
     PUT "/user/{id}";
@@ -223,19 +266,10 @@ impl UserUpdated {
 
 不过，现在支持最好的是 GET 请求：
 
-```javascript
+```bash
 [2022-11-20T08:58:39Z INFO  fkl] runOpt: RunOpt { main: "/Volumes/source/feakin/fklang/docs/samples/impl.fkl", path: None, impl_name: Some("PackageJsonGet"), env: None, func_name: HttpRequest, custom_func: None }
 [2022-11-20T08:58:39Z INFO  fkl::builtin::funcs::http_request] headers: {"user-agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1) AppleWebKit/533.2.1 (KHTML, like Gecko) Chrome/24.0.811.0 Safari/533.2.1"}
 [2022-11-20T08:58:39Z INFO  fkl::builtin::funcs::http_request] Content-Type: text/plain; charset=utf-8
 ```
 
 在未来，它也可以作为自动化测试的核心部分。
-
-## 小结
-
-尽管，在当前的版本里，我们使用的是 Rust + Pest 的方式开发。但是呢，在设计上我们已经趋近于 Kotlin DSL 的风格，方便于未来进行扩展。最后，再 Show 一下代码
-
-* 文档地址：<https://book.feakin.com/>
-* IDEA 插件下载：<https://plugins.jetbrains.com/plugin/20026-feakin/versions/stable/229113>
-* Fklang 项目地址：<https://github.com/feakin/fklang>
-* IDEA 插件源码：<https://github.com/feakin/intellij-feakin>
