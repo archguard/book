@@ -1,6 +1,12 @@
 # 表征化建模
 
+(characterization modeling) or (fact-based modeling)
+
 > 概括来讲，纵观各种语言，其语法成分汇总起来构成一个关键概念集合。 —— Leonard Talmy 
+
+维基百科定义：
+
+> 表征 (Characterization), 在材料科学中使用时，指的是探测和测量材料的结构和特性的广泛而通用的过程。
 
 ## 背景
 
