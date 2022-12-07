@@ -2,11 +2,7 @@
 
 > 架构工作台是一个环境，其设计初衷用于帮助人们设计架构、演进架构、观测架构，并有效地运用架构所需要的高质量工具，如交互式的架构开发和分析。
 
-在上一篇文章《[架构即代码：编码下一代企业（应用）架构体系](https://www.phodal.com/blog/architecture-as-code/)》中，我们介绍了架构即代码的思想，它是如何围绕于架构的一系列模式，将架构元素、特征进行组合与呈现，并将架构决策与设计原则等紧密的与系统相结合。
-
-而为了实施及落地**架构即代码**的理念，还需要构建一个运行这些代码的平台，我们称它称为架构工作台。可是，为什么我们要构建一个架构工作台？仅仅是为了好玩。
-
-## 为什么构建架构工作台？
+## 问题：为什么需要架构工作台？
 
 在 ArchGuard 中，我们想治理的是架构的三种形态：**设计态**、**开发态**和**运行态**。对应于：
 
@@ -25,7 +21,9 @@
 
 所以，在实现这样一个标准化的架构模式系统之前，不如尝试构建一个更灵活的形式：架构工作台。它可以帮助我们更好地探索系统，也更符合我们的初期体验。
 
-## 什么是架构工作台
+## 解决方案
+
+### 什么是架构工作台
 
 对于工作台这一概念来说，作为一个活跃的 DSL 创造者，我比较熟悉的是 Martin Fowler 在《领域特定语言》中对于语言工作台的定义：
 
@@ -45,7 +43,7 @@
 
 在这些特性中，我们认为**构建架构的数字孪生**是这个工作台最应该被重视的部分，而基础块则是：设计架构、演进架构与观测架构。
 
-### 基础：设计架构、演进架构与观测架构
+#### 基础：设计架构、演进架构与观测架构
 
 在治理架构时，我们通常会关注于如何设计，如何演进，以及观测架构在运行时的状态。
 
@@ -55,7 +53,7 @@
 
 一个基础的架构工作台，应该考虑上述的三个要素。
 
-### 进阶：构建架构的数字孪生
+#### 进阶：构建架构的数字孪生
 
 理想的架构工作台，它应该提供一个可交互的架构的映射版本。它意味着：它是对系统或对象在其整个生命周期中的虚拟表示，我们可以根据实时数据进行更新，并使用**模拟、机器学习和推理**来帮助决策。
 
@@ -69,7 +67,7 @@
 
 这个版本相当于是设计态，在实现的时候，还会受到开发能力和数据上的制约。未来，我们是不是也应该代码及其架构孪生的双向绑定？
 
-### 核心：说明性编程与显性设计
+#### 核心：说明性编程与显性设计
 
 我们所熟悉的各类架构相关的规范，它存在着诸多的问题，诸如于：**规范不直观、规范没有自动化**等。为了有效的演进架构，我们需要有效地结合规范、代码、设计，也就是说明性编程与显性设计，它们都是来自于 PL（编程语言）/ DSL（领域特定语言）中的概念。
 
@@ -78,7 +76,7 @@
 
 这两个特性是围绕于**架构即代码**这一理念所改善的，诸如于 PlantUML、Graphviz 这一类图表即代码（Diagrams as code）也具备了这样的特质。
 
-### 其它特质
+#### 其它特质
 
 当然，为了让这个系统更好用，我们还需要其它的一系列特性：
 
@@ -87,35 +85,9 @@
 
 依旧还有诸多东西可以探索，等待我们构建完第一个版本后，再展开讨论。
 
-## 我们应该如何去设计与实现的？
+## 示例：ArchGuard 架构工作台
 
-我们现在 ArchGuard 中实践一个这样的系统，它相当地令人激动。作为一个早期的版本，它勉强可以工作，如下是我们构建系统的一些思路。
-
-### 1. 大数据的工作台作为灵感
-
-由于，系统是一个类似于数据分析的系统，所以我们的诸多流感来源于大数据领域。在工作台上，起初，我们的想法是构建一个采用 RStudio 似的可编译报告，并提供类似于 Jupyter 的交互体验。
-
-可由于 Jupyter 的交互体验太差，下载的文件又没有可读性，不能方便地编辑 + 运行。所以，我们采用了 Markdown 作为数据格式，方便于开发人员编写文档，也可以在任意的 IDE 中打开和编辑。在 UI 上，则是采用 ProseMirror 主编辑器，即 Markdown 的编辑器，采用 Monaco Editor 作为副编辑器，即代码的编辑器。
-
-### 2. 构建基于 REPL 的抽象
-
-考虑到了 IDE 支持，我们采用了 Kotlin 来构建**内部 DSL**，这样就无需外部 DSL 需要构建编辑器支持。接着，就采用了 Kotlin Scripting Compiler 作为底层的 REPL（read–eval–print loop，也称为**交互式顶层构件**），简单来说，就是 Kotlin 语言的命令行模式。从形态上来说，类似于 MySQL Workbench 的形式，又或者说是 Python 的 CLI 模式。
-
-随后，便是抽象系统（ArchGuard）、设计态的架构、架构适应度函数的 DSL。
-
-### 3. 请求和响应程序的运行
-
-在有了编译器后端的支持及 Kotlin DSL 的 IDE 之后，我们需要构建双者的桥梁。于是，我们采用 WebSocket 作为通信方式，返回结果上按不同的类型处理。诸如于：
-
-* 集成后端 API 的运行结果。
-* 图形结果。Mermaid、D3.js、Echart.js 是针对于不同图形展示。
-* 执行对应的扫描。
-
-与通常的 C/S 结构开发无异。图形化的结果，用于支持我们的**说明性编程与显性设计**。
-
-# 构建 ArchGuard 架构工作台
-
-## 原型参考与设计：可交互环境与文档体验
+### 原型参考与设计：可交互环境与文档体验
 
 什么是文档？什么是代码？两者没有一个明确的界限，文档是可执行的，代码也是可执行的。不过，从最终的形态上来说，它们都是知识。所以，重点依旧在于如何将这些知识显式化。所以从原型参考上，我们关注于：可交互环境与文档体验设计。
 
@@ -140,11 +112,11 @@
 
 而诸如于 Mermaid、Graphviz 这一类的图即代码（diagram as code），它们在两者提供了一个很好的平衡（只针对于程序员）。
 
-## 技术评估：DSL、REPL 与编辑器
+### 技术评估：DSL、REPL 与编辑器
 
 再回到实现上来，在进行架构工作台的技术评估时，我们关注于架构师编写的 DSL（领域特定语言）语法、REPL（read–eval–print loop） 运行环境以及用于交互的编辑器。其核心关注点是：如何构建更好的[开发者体验](https://github.com/phodal/dx)，一个老生常谈的、难话题。
 
-### DSL 语法：Antlr vs Kotlin DSL
+#### DSL 语法：Antlr vs Kotlin DSL
 
 在 ArchGuard 中，主要使用的是 Antlr 框架来进行不同语言的语法解析（即 Chapi）。因此，使用 Antlr 来设计一个新的 DSL 及其编译器前端，对于我们而言，并不存在技术上的挑战。甚至于，在以往的经历中，我们也有大型 IDEA 插件架构设计与开发的经历。
 
@@ -166,7 +138,7 @@ routing {
 
 除了已经有丰富的 IDE、编辑器的支持之外。在构建**架构适应度函数**时，也可以使用语言库提供的数学功能，以便于定制各类的计算规则。
 
-### 架构 REPL：Kotlin Scripting vs Kotlin Jupyter
+#### 架构 REPL：Kotlin Scripting vs Kotlin Jupyter
 
 而对于构建一个交互式架构 REPL 来说，我们需要需要考虑的一个核心点是：**构建执行上下文（EvalContext）**。即后面运行的代码是依赖于前面代码提供的上下文的，如变量等：`val x = 2 * 3`，后续就可以使用 `x` 。
 
@@ -181,7 +153,7 @@ routing {
 
 因此，在最后，我们基于 Kotlin Jupyter 的 API 构建了 ArchGuard 的架构 REPL。
 
-### 探索编辑器：ProseMirror vs Others
+#### 探索编辑器：ProseMirror vs Others
 
 对于编辑器来说，考虑的核心点是：**组件扩展性**。即，可以按需添加用于展示图表的组件，又或者是其它的结果展示相关组件。
 
@@ -191,7 +163,7 @@ routing {
 
 探索完之后，我们发现基于 ProseMirror 的 [rich-markdown-editor](https://github.com/outline/rich-markdown-editor) 能提供所需要的功能。只需要编写一些**类** ProseMirror 插件，不需要编写大量的 markdown 相关的处理功能。
 
-## 落地：构建数据通讯与结果呈现
+### 落地：构建数据通讯与结果呈现
 
 为了验证整个 PoC （Proof of Concept，概念证明）是可行的，接下来就是让数据作为胶水把一切串联起来，构建这样一个完整的端到端示例：
 
@@ -204,7 +176,7 @@ routing {
 
 所以，其实核心的部分只有一个：**模型的设计**，诸如于：Message 和 Action。
 
-### 数据传输与处理：Message 模型
+#### 数据传输与处理：Message 模型
 
 在 REPL 服务中，通过 WebSocket 接收到前端的数据之后，就需要将其转换为对应的数据，并返回给前端。如下是在 PoC 中，我们所定义的 Message ：
 
@@ -221,7 +193,7 @@ data class Message(
 
 在执行前端传入的代码后，会根据不同的执行结果，返回一些后续的 Action 信息（代码中的 `ReactiveAction`），以及对应的数据（在 `action` 中）。
 
-### REPL：构建执行环境
+#### REPL：构建执行环境
 
 对于 REPL 来说，我们还需要做的事情有：
 
@@ -240,7 +212,7 @@ var embeddedClasspath: MutableList<File> = property.split(File.pathSeparator).ma
 
 在运行环境下，则会只引用所需要的 jar 包。两个环境的不一致，也需要在后续探索一下如何进行优化。
 
-### 编辑器：
+#### 编辑器：
 
 在我们落地的过程中，编辑器的实现被分为两部分，一个是编写 ProseMirror 插件，另外一个则是完善 Monaco Editor 的感知。
 
@@ -265,7 +237,7 @@ var embeddedClasspath: MutableList<File> = property.split(File.pathSeparator).ma
 
 Monaco Editor 的完善，主要会围绕于：添加代码高亮、自动填充与智能感知。现在，只完成了基本的功能，还有很多功能需要后续进行探索。
 
-### 结果展示与图形
+#### 结果展示与图形
 
 对于结果来说，其核心的部分在 `ResultDispatcher` 上，顾名思义，根据不同的结果来展示不同的展示结果，诸如于：
 
@@ -281,72 +253,3 @@ switch (result.action.actionType) {
 ```
 
 而为了更好的呈现**技术相关的图形细节**，我们在 ArchGuard 中引入了第**五个图形库**（由于几个图形库的存在，构建变成了一件痛苦的事，大概是最大的技术债了）：Mermaid。先前的 Echart.js 可以为我们提供低成本的图形编写，D3.js 则是提供了更灵活的定制能力。
-
-## 最后，尝试一下部署吧
-
-在我们写完 PoC ，并自信满满地打了 tag 之后，发现自动构建出来的 Docker 镜像是不 work 的，这大半夜的。最后，总结下来，原因有两：
-
-
-1. 未配置 Nginx 的 WebSocket 。
-2. Kotlin REPL 依赖于 unpack 环境。
-
-好在，只要再快速修复（quickfix）、打个 tag 就能解决了。事实证明，但凡是想 quickfix，都没法 quickfix。
-
-### 配置 WebSocket
-
-首先，根据网上的文档，配置好对应的 WebSocket：
-
-```javascript
-location /ascode {
-  proxy_pass http://archguard-backend:8080;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection $connection_upgrade;
-}
-```
-
-于是，重构构建镜像之后，发现后端又出问题了，运行的 REPL 环境出错。
-
-### 配置 Kotlin REPL classpath
-
-如上所述，REPL 在代码中配置的是：
-
-```javascript
-val property = System.getProperty("java.class.path")
-var embeddedClasspath: MutableList<File> = property.split(File.pathSeparator).map(::File).toMutableList()
-```
-
-但是，在 Spring 打包后，classpath 只有一个，并且 Kotlin Scripting 会有一系列的问题，这个时候需要 `requiresUnpack`。详细见：Spring Gradle 插件文档：《[Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/)》，只是对应的解释说明：必须从 fat jars 中解压才能运行的**库列表**。 将每个库指定为具有 <groupId> 和 <artifactId> 的 <dependency>，它们将在运行时解包。
-
-效果上，就是 Spring 在运行的时候，会将对应的库从 BootJar 中解压出来到临时的目录。
-
-```javascript
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "1.8"
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-    }
-}
-
-tasks.withType<BootJar> {
-    requiresUnpack("**/kotlin-compiler-*.jar")
-    requiresUnpack("**/kotlin-script-*.jar")
-    requiresUnpack("**/kotlin-jupyter-*.jar")
-    requiresUnpack("**/dsl-*.jar")
-}
-```
-
-当然，编码上，一个一个去找太麻烦了，于是就找到临时目录遍历一下：
-
-```javascript
-val tempdir = compiler[0].parent
-embeddedClasspath = File(tempdir).walk(FileWalkDirection.BOTTOM_UP).sortedBy { it.isDirectory }.toMutableList()
-```
-
-最后，生成的 classpath 值如下所示：
-
-```bash
-ikotlin - Classpath used in script: [/tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-script-runtime-1.6.21.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-kernel-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/dsl-2.0.0-alpha.12.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-compiler-embeddable-1.6.21.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-api-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-lib-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-shared-compiler-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-jupyter-common-dependencies-0.11.0-89-1.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f/kotlin-script-util-1.6.21.jar, /tmp/app.jar-spring-boot-libs-5edaa25c-496e-4eb0-b7d6-1118a8cc280f]
-```
-
-如此一来，它总算能正确启动了。
