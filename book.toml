@@ -3,7 +3,7 @@ authors = ["Phodal Huang"]
 language = "zh-cn"
 multilingual = false
 src = "src"
-title = "软件架构：分析、治理的模式与实践"
+title = "架构治理：模式与实践"
 
 [output.html]
 git-repository-url = "https://github.com/archguard/book"

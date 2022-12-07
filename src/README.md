@@ -1,4 +1,17 @@
-# 软件架构：分析、治理的模式与实践
+# 架构治理：模式与实践
+
+# 定义架构治理
+
+我们看到了有一种企业架构的定义是：
+
+> Enterprise Architecture is the practice of aligning the people, processes and assets of technology to best deliver
+> business outcomes.
+
+对于架构治理而言，我们也建议采用类似的方式：
+
+> 架构治理是一系列调整现有人员、流程和技术的实践，使架构符合预期的设想，以最好地交付业务成果。
+
+## 关于
 
 对于架构分析、治理的相关总结：
 
