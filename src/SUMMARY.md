@@ -30,7 +30,7 @@
     - [表征化建模过程](patterns/fact-based-modeling.md)
     - [轻量级文档](patterns/lightweight-documentation.md)
     - [协同设计工作坊](patterns/collaborative-workshop.md)
-       - [技术雷达] 
+       - [技术雷达]()
 - [语言抽象]()
     - [架构即代码](patterns/architecture-as-code.md)
     - [架构语言](patterns/architecture-language.md)
