@@ -1,10 +1,10 @@
 # Summary
 
-[总览](README.md)
+[架构治理总览](README.md)
 
 # 基础
 
-- [治理基石](basic/architecture-basic.md)
+- [架构治理基础](basic/architecture-basic.md)
 - [架构建模](basic/architecture-modeling.md)
 
 # 模式
