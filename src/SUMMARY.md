@@ -46,6 +46,7 @@
 - [流程]()
     - [X 技术描绘趋势](process/trend-lead-vision.md)
     - [增量引导](process/incremental-guidance.md)
+    - [上下文优于控制](process/context-over-control.md)
 - [工具化模式]()
     - [探索-开发模式](patterns/discovery-development.md)
     - [自服务数据分析](tools/self-service-data-analysis.md))

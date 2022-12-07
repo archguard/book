@@ -1,17 +1,27 @@
-# 架构治理：模式与实践
 
-# 定义架构治理
+ArchGuard Book 是一个关于架构治理的开源书籍，它的目标是帮助架构师们在实践中更好地进行架构治理。
+
+欢迎大家一起参与到这个项目中来，你可以通过以下方式参与：
+
+- 在 GitHub 上提交 Issue
+- 在 GitHub 上提交 Pull Request
+
+（点击右上角的 GitHub/编辑按钮即可修改）
+
+## 定义架构治理
 
 我们看到了有一种企业架构的定义是：
 
 > Enterprise Architecture is the practice of aligning the people, processes and assets of technology to best deliver
 > business outcomes.
 
-对于架构治理而言，我们也建议采用类似的方式：
+对于架构治理而言，我们也建议采用类似的定义：
 
 > 架构治理是一系列调整现有人员、流程和技术的实践，使架构符合预期的设想，以最好地交付业务成果。
 
-## 关于
+这里的设想包含了架构师脑子里的蓝图，将蓝图实例化为架构图本身也是一种治理。
+
+## 本书结构
 
 对于架构分析、治理的相关总结：
 
