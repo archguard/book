@@ -26,6 +26,17 @@
 
 ![适应度函数驱动](../images/fitness-function-driven.png)
 
+### 示例：Fitness Function 工作坊
+
+Fitness Function katas 旨在作为一个小团体（3-5 人）练习，通常作为更大团体（4-10 组是理想的）的一部分，每个人都在做不同的 kata。 
+主持人跟踪时间，分配 Katas（或允许本网站随机选择一个），并充当练习的促进者。
+
+相关资料：http://evolutionaryarchitecture.com/ffkatas/index.html
+
+
+[List Katas](http://evolutionaryarchitecture.com/ffkatas/list.html)
+
+
 ## 相关资源
 
 - 《演进式架构》
