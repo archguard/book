@@ -31,7 +31,6 @@
     - [轻量级文档](patterns/lightweight-documentation.md)
        - [架构一页纸](patterns/all-in-one-page.md)
     - [协同设计工作坊](patterns/collaborative-workshop.md)
-       - [技术雷达]()
 - [语言抽象]()
     - [架构即代码](patterns/architecture-as-code.md)
     - [架构语言](patterns/architecture-language.md)
@@ -42,8 +41,11 @@
     - [访问控制](patterns/access-control.md)
         - [有限核心域](patterns/limited-core-domain.md)
 
-# 工具
+# 流程与工具
 
+- [流程]()
+    - [X 技术描绘趋势](process/trend-lead-vision.md)
+    - [增量引导](process/incremental-guidance.md)
 - [工具化模式]()
     - [探索-开发模式](patterns/discovery-development.md)
     - [自服务数据分析](tools/self-service-data-analysis.md))
