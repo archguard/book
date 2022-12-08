@@ -2,12 +2,13 @@
 
 [架构治理总览](README.md)
 
-# 基础
+# 架构治理基础
 
-- [架构治理基础](basic/architecture-basic.md)
+- [元素化模式](basic/elemental-pattern.md)
 - [架构建模](basic/architecture-modeling.md)
+- [架构治理](basic/architecture-basic.md)
 
-# 模式
+# 架构治理模式
 
 - [模式的模式](patterns/README.md)
 - [特征集合]()
@@ -50,6 +51,7 @@
     - [决策制定框架](process/decision-framework.md)
     - [职责矩阵 (RACI)](process/responsibilities-matrix.md)
 - [能力]()
+    - [能力评估](process/capability-assessment.md)
     - [能力映射](process/capability-mapping.md)
     - [能力热图](process/capability-heat-map.md)
 
