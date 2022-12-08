@@ -51,6 +51,7 @@
     - [职责矩阵 (RACI)](process/responsibilities-matrix.md)
 - [能力]()
     - [能力映射](process/capability-mapping.md)
+    - [能力热图](process/capability-heat-map.md)
 
 # 工具
 
