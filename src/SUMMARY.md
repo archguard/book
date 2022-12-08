@@ -22,14 +22,14 @@
 - [可视化]()
     - [城市隐喻](patterns/city-metaphor.md)
     - [图网络](patterns/graph-network.md)
-        - [依赖图](patterns/graph-dependency.md) 
+        - [依赖图](patterns/graph-dependency.md)
     - [交互式分析](patterns/interactive-analysis.md)
 - [治理与演进]()
     - [规则限定](patterns/linter-limit-rule.md)
     - [门禁](patterns/gate-guard.md)
     - [表征化建模过程](patterns/fact-based-modeling.md)
     - [轻量级文档](patterns/lightweight-documentation.md)
-       - [架构一页纸](patterns/all-in-one-page.md)
+        - [架构一页纸](patterns/all-in-one-page.md)
     - [协同设计工作坊](patterns/collaborative-workshop.md)
 - [语言抽象]()
     - [架构即代码](patterns/architecture-as-code.md)
@@ -41,7 +41,7 @@
     - [访问控制](patterns/access-control.md)
         - [有限核心域](patterns/limited-core-domain.md)
 
-# 流程与工具
+# 流程与能力
 
 - [流程]()
     - [X 技术描绘趋势](process/trend-lead-vision.md)
@@ -49,6 +49,11 @@
     - [上下文优于控制](process/context-over-control.md)
     - [决策制定框架](process/decision-framework.md)
     - [职责矩阵 (RACI)](process/responsibilities-matrix.md)
+- [能力]()
+    - [能力映射](process/capability-mapping.md)
+
+# 工具
+
 - [工具化模式]()
     - [探索-开发模式](patterns/discovery-development.md)
     - [自服务数据分析](tools/self-service-data-analysis.md))
