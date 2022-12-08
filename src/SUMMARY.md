@@ -7,10 +7,10 @@
 - [元素化模式](basic/elemental-pattern.md)
 - [架构建模](basic/architecture-modeling.md)
 - [架构治理](basic/architecture-basic.md)
-
-# 架构治理模式
-
 - [模式的模式](patterns/README.md)
+
+# 应用架构与技术架构治理模式
+
 - [特征集合]()
     - [架构特征仓库](patterns/characteristics-repository.md)
     - [架构适应度函数](patterns/fitness-function.md)
@@ -42,7 +42,7 @@
     - [访问控制](patterns/access-control.md)
         - [有限核心域](patterns/limited-core-domain.md)
 
-# 流程与能力
+# 流程与能力治理模式
 
 - [流程]()
     - [X 技术描绘趋势](process/trend-lead-vision.md)
@@ -55,19 +55,22 @@
     - [能力映射](process/capability-mapping.md)
     - [能力热图](process/capability-heat-map.md)
 
-# 工具
+# 工具化模式
 
 - [工具化模式]()
     - [探索-开发模式](patterns/discovery-development.md)
     - [自服务数据分析](tools/self-service-data-analysis.md))
     - [插件化架构](tools/plugin-system.md)
     - [DAG 管道模式](tools/dag-pipeline.md)
-- [ArchGuard](tools/basic.md)
 
 # 反模式
 
 - [流程]()
     - [模式逃逸](bad-patterns/pattern-escape.md)
+
+# 其它
+
+- [ArchGuard](tools/basic.md)
 
 # 参考资料
 
