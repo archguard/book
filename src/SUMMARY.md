@@ -47,6 +47,7 @@
     - [X 技术描绘趋势](process/trend-lead-vision.md)
     - [增量引导](process/incremental-guidance.md)
     - [上下文优于控制](process/context-over-control.md)
+    - [决策制定框架](process/decision-framework.md)
     - [职责矩阵 (RACI)](process/responsibilities-matrix.md)
 - [工具化模式]()
     - [探索-开发模式](patterns/discovery-development.md)
