@@ -9,7 +9,7 @@
 - [架构治理](basic/architecture-basic.md)
 - [模式的模式](patterns/README.md)
 
-# 应用架构与技术架构治理模式
+# 数字化治理模式
 
 - [特征集合]()
     - [架构特征仓库](patterns/characteristics-repository.md)
