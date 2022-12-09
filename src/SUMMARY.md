@@ -12,6 +12,7 @@
 # 数字化治理模式
 
 - [特征集合](category/category-characteristic.md)
+    - [特征度量](category/category-characteristic-measure.md)  
     - [架构特征仓库](patterns/characteristics-repository.md)
     - [架构适应度函数](patterns/fitness-function.md)
     - [架构孪生](patterns/architecture-twin.md)

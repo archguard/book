@@ -37,6 +37,8 @@ Fitness Function katas 旨在作为一个小团体（3-5 人）练习，通常�
 [List Katas](http://evolutionaryarchitecture.com/ffkatas/list.html)
 
 
+### 相关：主序列距离适应度函数
+
 ## 相关资源
 
 - 《演进式架构》
