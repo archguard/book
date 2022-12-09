@@ -4,10 +4,10 @@
 
 # 架构治理基础
 
-- [元素化模式](basic/elemental-pattern.md)
 - [架构建模](basic/architecture-modeling.md)
 - [架构治理基础](basic/architecture-basic.md)
 - [模式的模式](basic/architecture-patterns.md)
+- [元素化模式](basic/elemental-pattern.md)
 
 # 数字化治理模式
 
@@ -51,6 +51,7 @@
     - [上下文优于控制](process/context-over-control.md)
     - [决策制定框架](process/decision-framework.md)
     - [职责矩阵 (RACI)](process/responsibilities-matrix.md)
+    - [资产沉淀](process/asset-deposition.md)
 - [能力]()
     - [能力评估](process/capability-assessment.md)
     - [能力映射](process/capability-mapping.md)
