@@ -6,8 +6,8 @@
 
 - [元素化模式](basic/elemental-pattern.md)
 - [架构建模](basic/architecture-modeling.md)
-- [架构治理](basic/architecture-basic.md)
-- [模式的模式](patterns/README.md)
+- [架构治理基础](basic/architecture-basic.md)
+- [模式的模式](basic/architecture-patterns.md)
 
 # 数字化治理模式
 
