@@ -11,6 +11,8 @@
 
 ## 解决方案
 
+结合在线编辑器、语言 REPL、扩展库等构建交互式分析系统，如 Jupyter：
+
 ![Jupyter Sample](../images/jupyter-sample.png)
 
 ### 示例： Jupyter
@@ -24,7 +26,29 @@ IPython
 
 ### 示例：Kotlin Jupyter
 
-GitHub: https://github.com/Kotlin/kotlin-jupyter
+GitHub: [https://github.com/Kotlin/kotlin-jupyter](https://github.com/Kotlin/kotlin-jupyter)
+
+Let's Plot: [https://github.com/JetBrains/lets-plot-kotlin](https://github.com/JetBrains/lets-plot-kotlin)
+
+sample code:
+
+```kotlin
+%use lets-plot
+
+val rand = java.util.Random()
+val data = mapOf (
+    "rating" to List(200) { rand.nextGaussian() } + List(200) { rand.nextGaussian() * 1.5 + 1.5 },
+    "cond" to List(200) { "A" } + List(200) { "B" }
+)
+
+var p = letsPlot(data)
+p += geomDensity(color="dark_green", alpha=.3) {x="rating"; fill="cond"}
+p + ggsize(700, 350)
+```
+
+![Lets Plot Example](https://raw.githubusercontent.com/JetBrains/lets-plot-kotlin/master/docs/examples/images/quickstart.png)
+
+## 相关资源
 
 相关资源：
 

@@ -23,6 +23,9 @@
 
 ## 解决方案
 
+
+![ArchGuard 架构工作台](../images/archguard-workbench.png)
+
 ### 什么是架构工作台
 
 对于工作台这一概念来说，作为一个活跃的 DSL 创造者，我比较熟悉的是 Martin Fowler 在《领域特定语言》中对于语言工作台的定义：
