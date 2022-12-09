@@ -30,6 +30,7 @@
     - [门禁](patterns/gate-guard.md)
     - [表征化建模过程](patterns/fact-based-modeling.md)
     - [轻量级文档](patterns/lightweight-documentation.md)
+        - [架构决策记录](patterns/architecture-decision-record.md) 
         - [架构一页纸](patterns/all-in-one-page.md)
     - [协同设计工作坊](patterns/collaborative-workshop.md)
 - [语言抽象](category/category-language.md)
