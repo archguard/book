@@ -53,6 +53,7 @@
     - [决策制定框架](process/decision-framework.md)
     - [职责矩阵 (RACI)](process/responsibilities-matrix.md)
     - [管理依赖](process/manage-dependency.md)
+    - [轻量级架构检视](process/lightweight-architecture-review.md)
 - [能力]()
     - [能力评估](process/capability-assessment.md)
     - [能力映射](process/capability-mapping.md)
