@@ -12,7 +12,7 @@
 # 数字化治理模式
 
 - [特征集合](category/category-characteristic.md)
-    - [特征度量](category/category-characteristic-measure.md)  
+    - [特征度量](category/category-characteristic-measure.md)
     - [架构特征仓库](patterns/characteristics-repository.md)
     - [架构适应度函数](patterns/fitness-function.md)
     - [架构孪生](patterns/architecture-twin.md)
@@ -26,12 +26,12 @@
     - [图网络](patterns/graph-network.md)
         - [依赖图](patterns/graph-dependency.md)
     - [交互式分析](patterns/interactive-analysis.md)
-- [治理与演进](category/category-governance.md)
+- [有序](category/category-ordered.md)
     - [规则限定](patterns/linter-limit-rule.md)
-    - [门禁](patterns/gate-guard.md)
+        - [门禁](patterns/gate-guard.md)
     - [表征化建模过程](patterns/fact-based-modeling.md)
     - [轻量级文档](patterns/lightweight-documentation.md)
-        - [架构决策记录](patterns/architecture-decision-record.md) 
+        - [架构决策记录](patterns/architecture-decision-record.md)
         - [架构一页纸](patterns/all-in-one-page.md)
     - [协同设计工作坊](patterns/collaborative-workshop.md)
 - [语言抽象](category/category-language.md)
@@ -52,11 +52,13 @@
     - [上下文优于控制](process/context-over-control.md)
     - [决策制定框架](process/decision-framework.md)
     - [职责矩阵 (RACI)](process/responsibilities-matrix.md)
-    - [资产沉淀](process/asset-deposition.md)
+    - [管理依赖](process/manage-dependency.md)
 - [能力]()
     - [能力评估](process/capability-assessment.md)
     - [能力映射](process/capability-mapping.md)
     - [能力热图](process/capability-heat-map.md)
+- [知识管理]()
+    - [资产沉淀](process/asset-deposition.md)
 
 # 工具化模式
 
@@ -70,6 +72,8 @@
 
 - [流程]()
     - [模式逃逸](bad-patterns/pattern-escape.md)
+
+---
 
 # 其它
 
