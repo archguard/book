@@ -34,7 +34,7 @@
         - [架构决策记录](patterns/architecture-decision-record.md)
         - [架构一页纸](patterns/all-in-one-page.md)
     - [协同设计工作坊](patterns/collaborative-workshop.md)
-- [语言抽象](category/category-language.md)
+- [领域抽象](category/category-language.md)
     - [架构即代码](patterns/architecture-as-code.md)
     - [架构语言](patterns/architecture-language.md)
     - [架构工作台](patterns/architecture-workbench.md)
