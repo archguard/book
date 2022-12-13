@@ -74,6 +74,7 @@
     - [自服务数据分析](tools/self-service-data-analysis.md))
     - [插件化架构](tools/plugin-system.md)
     - [DAG 管道模式](tools/dag-pipeline.md)
+    - [工具前移](tools/tool-shift-left.md)
 
 # 反模式
 
