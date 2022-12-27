@@ -65,7 +65,7 @@
 # 组织与团队模式
 
 - [团队模式]()
-    - [团队拓扑](team/team-topology.md) 
+    - [团队拓扑](team/team-topology.md)
 
 # 工具化模式
 
@@ -82,10 +82,6 @@
     - [模式逃逸](bad-patterns/pattern-escape.md)
 
 ---
-
-# 其它
-
-- [ArchGuard](tools/basic.md)
 
 # 参考资料
 
