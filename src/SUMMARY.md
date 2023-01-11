@@ -70,7 +70,7 @@
 # 工具化模式
 
 - [工具化模式]()
-    - [探索-开发模式](patterns/discovery-development.md)
+    - [探索-开发模式](tools/discovery-development.md)
     - [自服务数据分析](tools/self-service-data-analysis.md))
     - [插件化架构](tools/plugin-system.md)
     - [DAG 管道模式](tools/dag-pipeline.md)
