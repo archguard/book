@@ -1,10 +1,16 @@
 # 层次化分解
 
-## 解决方案
+
+
+## 问题：如何将复杂的架构分解为更小的部分？
+
+对于复杂的架构，我们需要将其分解为更小的部分，以便于理解和管理。
+
+## 解决方案：层次化分解
 
 ### 示例: 基于 LVT 的企业架构分解？
 
-https://insights.thoughtworks.cn/lean-value-tree-2/
+参考文章：[轻量级规划实践方法——精益价值树](https://insights.thoughtworks.cn/lean-value-tree-2/)
 
 一个典型的精益价值树，由**愿景、目标、投注和举措**及相应的**成效度量**（Measure of Success，简称MoS）构成。
 - 
@@ -30,3 +36,10 @@ https://insights.thoughtworks.cn/lean-value-tree-2/
 | 支持进入新市场  | 消除偶然的复杂性  |     | 封装遗留系统   |
 | 支持已有业务创新 | 一致的接口和数据流 |     | 最小化依赖    |
 |          | 没有银弹      |     | ....     |
+
+### 示例：ArchGuard 3.0 LVT 示例
+
+在设计 ArchGuard 3.0 的架构时，我们分解为：
+
+![ArchGuard 3.0 LVT Demo](../images/archguard-3-lvt.png)
+
