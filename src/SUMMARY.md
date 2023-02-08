@@ -35,6 +35,7 @@
         - [架构一页纸](patterns/all-in-one-page.md)
     - [协同设计工作坊](patterns/collaborative-workshop.md)
     - [自动化监测](patterns/automated-monitoring.md)
+    - [内建模式的脚手架](patterns/scaffolding.md)
 - [领域抽象](category/category-language.md)
     - [架构即代码](patterns/architecture-as-code.md)
     - [架构语言](patterns/architecture-language.md)
