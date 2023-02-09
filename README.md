@@ -4,6 +4,10 @@
 
 在线阅读：[https://book.archguard.org/](https://book.archguard.org/)
 
+持续关注我们：
+
+<img src="https://archguard.org/wechat.jpg" width="380" height="380" alt="wechat">
+
 ## License
 
 This code is distributed under the Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 License.

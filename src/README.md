@@ -15,6 +15,10 @@ PS：本模式手册是我们（ArchGuard core team) 在构建 ArchGuard 时，�
 
 （点击右上角的 GitHub/编辑按钮即可修改）
 
+持续关注我们：
+
+<img src="https://archguard.org/wechat.jpg" width="380" height="380" alt="wechat">
+
 ## 定义架构治理
 
 我们看到有一种企业架构的定义：
