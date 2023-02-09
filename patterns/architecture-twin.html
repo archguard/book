@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>架构孪生 - 架构治理模式</title>
+        <!-- Custom HTML head -->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">架构治理总览</a></li><li class="chapter-item expanded affix "><li class="part-title">架构治理基础</li><li class="chapter-item expanded "><a href="../basic/architecture-modeling.html"><strong aria-hidden="true">1.</strong> 架构建模</a></li><li class="chapter-item expanded "><a href="../basic/architecture-basic.html"><strong aria-hidden="true">2.</strong> 架构治理基础</a></li><li class="chapter-item expanded "><a href="../basic/architecture-patterns.html"><strong aria-hidden="true">3.</strong> 模式的模式</a></li><li class="chapter-item expanded "><a href="../basic/elemental-pattern.html"><strong aria-hidden="true">4.</strong> 元素化模式</a></li><li class="chapter-item expanded affix "><li class="part-title">数字化治理模式</li><li class="chapter-item expanded "><a href="../category/category-characteristic.html"><strong aria-hidden="true">5.</strong> 特征集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../category/category-characteristic-measure.html"><strong aria-hidden="true">5.1.</strong> 特征度量</a></li><li class="chapter-item expanded "><a href="../patterns/characteristics-repository.html"><strong aria-hidden="true">5.2.</strong> 架构特征仓库</a></li><li class="chapter-item expanded "><a href="../patterns/fitness-function.html"><strong aria-hidden="true">5.3.</strong> 架构适应度函数</a></li><li class="chapter-item expanded "><a href="../patterns/architecture-twin.html" class="active"><strong aria-hidden="true">5.4.</strong> 架构孪生</a></li></ol></li><li class="chapter-item expanded "><a href="../category/category-analysis.html"><strong aria-hidden="true">6.</strong> 分析</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/focus-driven.html"><strong aria-hidden="true">6.1.</strong> 关注点驱动</a></li><li class="chapter-item expanded "><a href="../patterns/analysis-lifecycle.html"><strong aria-hidden="true">6.2.</strong> 分解生命周期</a></li><li class="chapter-item expanded "><a href="../patterns/language-metamodel.html"><strong aria-hidden="true">6.3.</strong> 语言元模型</a></li><li class="chapter-item expanded "><a href="../patterns/dynamic-tracing.html"><strong aria-hidden="true">6.4.</strong> 动静态追踪</a></li></ol></li><li class="chapter-item expanded "><a href="../category/category-viz.html"><strong aria-hidden="true">7.</strong> 可视化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/city-metaphor.html"><strong aria-hidden="true">7.1.</strong> 城市隐喻</a></li><li class="chapter-item expanded "><a href="../patterns/graph-network.html"><strong aria-hidden="true">7.2.</strong> 图网络</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/graph-dependency.html"><strong aria-hidden="true">7.2.1.</strong> 依赖图</a></li></ol></li><li class="chapter-item expanded "><a href="../patterns/interactive-analysis.html"><strong aria-hidden="true">7.3.</strong> 交互式分析</a></li></ol></li><li class="chapter-item expanded "><a href="../category/category-ordered.html"><strong aria-hidden="true">8.</strong> 有序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/linter-limit-rule.html"><strong aria-hidden="true">8.1.</strong> 规则限定</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/gate-guard.html"><strong aria-hidden="true">8.1.1.</strong> 门禁</a></li></ol></li><li class="chapter-item expanded "><a href="../patterns/fact-based-modeling.html"><strong aria-hidden="true">8.2.</strong> 表征化建模过程</a></li><li class="chapter-item expanded "><a href="../patterns/lightweight-documentation.html"><strong aria-hidden="true">8.3.</strong> 轻量级文档</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/architecture-decision-record.html"><strong aria-hidden="true">8.3.1.</strong> 架构决策记录</a></li><li class="chapter-item expanded "><a href="../patterns/all-in-one-page.html"><strong aria-hidden="true">8.3.2.</strong> 架构一页纸</a></li></ol></li><li class="chapter-item expanded "><a href="../patterns/collaborative-workshop.html"><strong aria-hidden="true">8.4.</strong> 协同设计工作坊</a></li><li class="chapter-item expanded "><a href="../patterns/automated-monitoring.html"><strong aria-hidden="true">8.5.</strong> 自动化监测</a></li><li class="chapter-item expanded "><a href="../patterns/scaffolding.html"><strong aria-hidden="true">8.6.</strong> 内建模式的脚手架</a></li></ol></li><li class="chapter-item expanded "><a href="../category/category-language.html"><strong aria-hidden="true">9.</strong> 领域抽象</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/architecture-as-code.html"><strong aria-hidden="true">9.1.</strong> 架构即代码</a></li><li class="chapter-item expanded "><a href="../patterns/architecture-language.html"><strong aria-hidden="true">9.2.</strong> 架构语言</a></li><li class="chapter-item expanded "><a href="../patterns/architecture-workbench.html"><strong aria-hidden="true">9.3.</strong> 架构工作台</a></li></ol></li><li class="chapter-item expanded "><a href="../category/category-categorization.html"><strong aria-hidden="true">10.</strong> 范畴化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/hierarchical-decomposition.html"><strong aria-hidden="true">10.1.</strong> 层次化分解</a></li><li class="chapter-item expanded "><a href="../patterns/layered-control.html"><strong aria-hidden="true">10.2.</strong> 层级层次控制</a></li><li class="chapter-item expanded "><a href="../patterns/access-control.html"><strong aria-hidden="true">10.3.</strong> 访问控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/limited-core-domain.html"><strong aria-hidden="true">10.3.1.</strong> 有限核心域</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">流程与能力治理模式</li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> 流程</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../process/trend-lead-vision.html"><strong aria-hidden="true">11.1.</strong> X 技术描绘趋势</a></li><li class="chapter-item expanded "><a href="../process/incremental-guidance.html"><strong aria-hidden="true">11.2.</strong> 增量引导</a></li><li class="chapter-item expanded "><a href="../process/context-over-control.html"><strong aria-hidden="true">11.3.</strong> 上下文优于控制</a></li><li class="chapter-item expanded "><a href="../process/decision-framework.html"><strong aria-hidden="true">11.4.</strong> 决策制定框架</a></li><li class="chapter-item expanded "><a href="../process/responsibilities-matrix.html"><strong aria-hidden="true">11.5.</strong> 职责矩阵 (RACI)</a></li><li class="chapter-item expanded "><a href="../process/manage-dependency.html"><strong aria-hidden="true">11.6.</strong> 管理依赖</a></li><li class="chapter-item expanded "><a href="../process/lightweight-architecture-review.html"><strong aria-hidden="true">11.7.</strong> 轻量级架构检视</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> 能力</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../process/capability-assessment.html"><strong aria-hidden="true">12.1.</strong> 能力评估</a></li><li class="chapter-item expanded "><a href="../process/capability-mapping.html"><strong aria-hidden="true">12.2.</strong> 能力映射</a></li><li class="chapter-item expanded "><a href="../process/capability-heat-map.html"><strong aria-hidden="true">12.3.</strong> 能力热图</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> 知识管理</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../process/asset-deposition.html"><strong aria-hidden="true">13.1.</strong> 资产沉淀</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">组织与团队模式</li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> 团队模式</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../team/team-topology.html"><strong aria-hidden="true">14.1.</strong> 团队拓扑</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">工具化模式</li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> 工具化模式</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/discovery-development.html"><strong aria-hidden="true">15.1.</strong> 探索-开发模式</a></li><li class="chapter-item expanded "><a href="../tools/self-service-data-analysis.html"><strong aria-hidden="true">15.2.</strong> 自服务数据分析</a></li><li class="chapter-item expanded "><a href="../tools/plugin-system.html"><strong aria-hidden="true">15.3.</strong> 插件化架构</a></li><li class="chapter-item expanded "><a href="../tools/dag-pipeline.html"><strong aria-hidden="true">15.4.</strong> DAG 管道模式</a></li><li class="chapter-item expanded "><a href="../tools/tool-shift-left.html"><strong aria-hidden="true">15.5.</strong> 工具前移</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">反模式</li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> 流程</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../bad-patterns/pattern-escape.html"><strong aria-hidden="true">16.1.</strong> 模式逃逸</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">参考资料</li><li class="chapter-item expanded "><a href="../reference/index.html"><strong aria-hidden="true">17.</strong> 参考资料</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">架构治理模式</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/archguard/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/archguard/book/edit/master/src/patterns/architecture-twin.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="架构孪生"><a class="header" href="#架构孪生">架构孪生</a></h1>
+<p>架构孪生是一种旨在精确反映架构设计、实现与运行态等的虚拟模型，以数字化的形式对软件的架构、代码模型、分层、实现技术等的进行动态的呈现。</p>
+<h2 id="上下文"><a class="header" href="#上下文">上下文</a></h2>
+<p><img src="https://www.esri.com/content/dam/esrisites/en-us/digital-twin/assets/digital-twin-banner-foreground.png" alt="Digital Twin" /></p>
+<h3 id="生命周期中的反馈回路"><a class="header" href="#生命周期中的反馈回路">生命周期中的反馈回路</a></h3>
+<p>我们做架构设计审查、代码度量等的目的是：掌握现有系统的设计与实现，<strong>以有序引导架构演进的方向</strong>。所以，我们围绕于生命周期的<strong>设计态</strong>、<strong>实现态</strong>与<strong>运行态</strong>，以持续架构设计的反馈回路，即由输出端的变化来调整输入端。所以，我们围绕于三态：</p>
+<ul>
+<li>设计态：目标架构。通过 DSL（领域特定语言） + 架构工作台来构建 。</li>
+<li>开发态：实现架构。关注于：可视化 + 自定义分析  + 架构治理。</li>
+<li>运行态：运行架构。结合  APM 工具，构建完整的分析链。</li>
+</ul>
+<p>我们应该预期这样一些反馈回路：</p>
+<ul>
+<li>设计 DSL 与开发态的代码实现绑定。可以反应原来的设计 DSL 是否原理，代码实现是否能与原先设计一致？如果不能那么问题出在哪里？</li>
+<li>设计态的服务蓝图与开发态的服务地图（ArchGuard 静态分析）、运行态的调用链路相绑定。可以反应与外部系统的设计和交互是否合理？是否符合当初的预期？</li>
+<li>……</li>
+</ul>
+<p>而在构建反馈回路的要点是：对于架构进行量化。</p>
+<h3 id="架构能准确描述吗"><a class="header" href="#架构能准确描述吗">架构能准确描述吗？</a></h3>
+<p>量化架构是一件困难的事，难度不在于代码和架构的模型本身。如果只从标准的架构定义来说，在先前的文章《<a href="https://www.phodal.com/blog/modeling-for-code/">如何为代码建模？</a>》、《<a href="https://www.phodal.com/blog/architecture-model/">为“架构”再建个模：如何用代码描述软件架构？</a>》介绍了代码的模型和架构的模型。但是，但是，我们都知道架构师是有无限的责任边界的，你要考虑所有不可能考虑到的底层问题，代码规范、数据库规范、异常处理机制等等。</p>
+<p>既然如此，架构师的架构边界在哪里？如果我们的职责超脱了狭义的架构本身，那么我们描述架构的方式是否应该改变？</p>
+<p>所以，我们需要寻找 “动态” （适用于不同组织）的架构模型，以及 “动态” 的治理模型。那么，答案是：</p>
+<ul>
+<li>架构的数字孪生</li>
+<li>架构适应度函数</li>
+</ul>
+<p>足够的自定义模型的空间可以让问题变得简单起来。</p>
+<h2 id="解决方案架构孪生"><a class="header" href="#解决方案架构孪生">解决方案：架构孪生</a></h2>
+<p>回到我们参考于数字孪生的架构孪生定义上：</p>
+<blockquote>
+<p>架构孪生是一种旨在精确反映架构设计、实现与运行态等的虚拟模型，以数字化的形式对软件的架构、代码模型、分层、实现技术等的进行动态的呈现。还能允许在每个阶段模拟新代码和设计带来的变化，以持续优化架构。</p>
+</blockquote>
+<p>由此，架构模型是可持续建设和运营中使用的架构孪生策略的关键组成部分。只是呢，为了实现这样的技术，我们需要面对几个挑战：</p>
+<ul>
+<li>架构模型因子</li>
+<li>生命周期跟踪与反馈</li>
+<li>虚拟化演进路径</li>
+</ul>
+<p>除此，还有一个非常有意思的问题依旧在考虑中：<strong>模拟态</strong>。如何针对于新的需求，动态模拟软件的架构演进，以发现潜在的架构瓶颈？</p>
+<p>值得一提的是，模型的可视化是数字孪生的一个难题。而在架构侧，Codecity 是一个非常不错的可视化解决方案。</p>
+<h3 id="架构模型因子"><a class="header" href="#架构模型因子">架构模型因子</a></h3>
+<p>如何描述架构模型呢？只需要寻找我们所需要的架构因子，便能构成我们的架构模型，再将其虚拟化。</p>
+<p>在构建数字孪生时，我们会给研究对象（例如，风力涡轮机）配备与重要功能方面相关的各种传感器。同样的在构建架构孪生时，我们也需要一系列的 &quot;传感器&quot; 来测量研究对象的各种属性。对照之下，我们也可以定义三种形态的 &quot;传感器&quot; ：</p>
+<ul>
+<li>设计时 - 架构描述性 “传感器”：描述性传感器用于描述架构的功能、特性和行为。</li>
+<li>开发时 - 静态量化 “传感器”：静态量化传感器用于描述架构的实现技术。</li>
+<li>运行时 - 探针（probe）：探针用于描述架构的运行时行为。</li>
+</ul>
+<p>那么，接下来就是确定一一个详细的架构因子，并将他们组合在一起，构建出自己的适应度函数。在实现上，每一个架构因子可以对应于一个或者多个构建任务，这便是我们想构建  ArchGuard CodeDB 以支撑种类繁多的架构因子。</p>
+<h3 id="生命周期跟踪与反馈"><a class="header" href="#生命周期跟踪与反馈">生命周期跟踪与反馈</a></h3>
+<p>如我们在引子 1 所描述，我们应该跟踪于生命周期中的架构因子，并根据已有的模式和规则为构建反馈回路。</p>
+<ul>
+<li>可视化架构模型。类似于 Codecity</li>
+<li>内建规则以提供反馈。</li>
+<li>构建专家系统。</li>
+</ul>
+<p>从孪生的角度来讲，难点是相似的：提供反馈与告警机制。</p>
+<h3 id="虚拟化演进路径"><a class="header" href="#虚拟化演进路径">虚拟化演进路径</a></h3>
+<p>在这一部分，我们想的是解决一个问题：<strong>如何体现你的架构未来会有问题？</strong></p>
+<p>我们经常听别人说到：“你的架构不具备可伸缩性”，那么如何通过孪生来体现呢？既然，只有带有回路反馈的全生命跟踪，才是真正的全生命周期概念。那么，在拿到足够的数据时，我们是不是能模拟架构的未来演进。诸如于，根据历史的变化趋势，能否发现未来的瓶颈点？</p>
+<p>譬如说，将模拟函数施加到系统之上，看出可视化模型的变化，进而构建基于现有系统的反馈，借此调整系统的设计。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../patterns/fitness-function.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../category/category-analysis.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../patterns/fitness-function.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../category/category-analysis.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
